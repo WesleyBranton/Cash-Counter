@@ -1,0 +1,124 @@
+* {
+	cursor: default;
+	font-family: sans-serif;
+	font-size:17px;
+	-moz-user-select: none;
+}
+
+table tr td {
+	text-align: center;
+}
+
+#total td:first-child {
+	text-align: left;
+	font-weight: bold;
+}
+
+.subTotal {
+	text-align: right;
+}
+
+.subTotal:before,
+#grandTotal:before,
+.faceValue:before {
+	content: '$';
+}
+
+#grandTotal {
+	border-top: 1px solid black;
+	font-weight: bold;
+}
+
+input {
+	text-align: center;
+	width: 75px;
+	border:none;
+	appearance: none;
+}
+
+button {
+	cursor: pointer;
+	border:none;
+	padding: 10px 0px;
+	margin: 0px 0px 5px 0px;
+	float: left;
+	border-radius: 10px;
+	font-size: 20px;
+	color: #FFF;
+	text-decoration: none;
+	transition: all 0.1s;
+	box-sizing:border-box;
+	border-top:0px solid white;
+}
+
+button:active {
+	transform: translate(0px,5px);
+	border-bottom:0px solid !important;
+	border-top:5px solid white !important;
+}
+
+#clear {
+	width:100%;
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+
+#print {
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+	width:48%;
+	float:left;
+}
+
+#options {
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+	width:48%;
+	float:right;
+}
+
+img {
+	float: right;
+}
+
+#receiptHeader, #receiptFooter {
+	display: none;
+}
+
+.coinroll {
+	width: 200px;
+	height:25px;
+	margin:0px;
+	padding:0px;
+	background-image: url(coinroller-back.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100% 100%;
+	display:flex;
+}
+
+.coinroll .progressBar {
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+	background-image: url(coinroller-fill.jpg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 0% 100%;
+}
+
+@media print {
+	button, .coinroll {
+		display: none !important;
+	}
+	#receiptHeader, #receiptFooter {
+		display: block !important;
+	}
+	#cashCounter {
+		margin-left: 20px !important;
+	}
+}

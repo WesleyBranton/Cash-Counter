@@ -1,0 +1,29 @@
+* {
+	font-family: sans-serif;
+}
+
+fieldset {
+	border: 2px solid #82BF56;
+	border-radius: 5px;
+}
+
+legend {
+	padding:5px 10px;
+	font-size:14pt;
+	border:none;
+	margin: 0px 0px 5px 0px;
+	border-radius: 10px;
+	font-size: 20px;
+	color: #FFF;
+	text-decoration: none;
+	transition: all 0.1s;
+	box-sizing:border-box;
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+
+.rollvalues {
+	width:50px;
+	text-align:center;
+}
