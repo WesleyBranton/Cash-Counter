@@ -1,128 +1,132 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+ * file, You can obtain one at https: //mozilla.org/MPL/2.0/. */
 
 * {
-	cursor: default;
-	font-family: sans-serif;
-	font-size:17px;
-	-moz-user-select: none;
+    cursor: default;
+    font: normal 17px sans-serif;
+    user-select: none;
 }
 
 table tr td {
-	text-align: center;
+    text-align: center;
 }
 
 #total td:first-child {
-	text-align: left;
-	font-weight: bold;
+    font-weight: bold;
+    text-align: left;
 }
 
 .subTotal {
-	text-align: right;
+    text-align: right;
 }
 
 .subTotal:before,
 #grandTotal:before,
 .faceValue:before {
-	content: '$';
+    content: '$';
 }
 
 #grandTotal {
-	border-top: 1px solid black;
-	font-weight: bold;
+    border-top: 1px solid black;
+    font-weight: bold;
 }
 
 input {
-	text-align: center;
-	width: 75px;
-	border:none;
-	appearance: none;
+    appearance: none;
+    border: none;
+    text-align: center;
+    width: 75px;
 }
 
 button {
-	cursor: pointer;
-	border:none;
-	padding: 10px 0px;
-	margin: 0px 0px 5px 0px;
-	float: left;
-	border-radius: 10px;
-	font-size: 20px;
-	color: #FFF;
-	text-decoration: none;
-	transition: all 0.1s;
-	box-sizing:border-box;
-	border-top:0px solid white;
+    border: none;
+    border-radius: 10px;
+    border-top: 0px solid white;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    margin: 0 0 5px 0;
+    padding: 10px 0;
+    text-decoration: none;
+    transition: ease all .1s;
 }
 
 button:active {
-	transform: translate(0px,5px);
-	border-bottom:0px solid !important;
-	border-top:5px solid white !important;
+    transform: translate(0, 5px);
+    border-bottom: 0 solid !important;
+    border-top: 5px solid white !important;
 }
 
 #clear {
-	width:100%;
-	background-color: #E74C3C;
-	border-bottom: 5px solid #BD3E31;
-	text-shadow: 0px -2px #BD3E31;
+    background: #E74C3C;
+    border-bottom: 5px solid #BD3E31;
+    text-shadow: 0 -2px #BD3E31;
+    width: 100%;
 }
 
 #print {
-	background-color: #82BF56;
-	border-bottom: 5px solid #669644;
-	text-shadow: 0px -2px #669644;
-	width:48%;
-	float:left;
+    background: #82BF56;
+    border-bottom: 5px solid #669644;
+    float: left;
+    text-shadow: 0 -2px #669644;
+    width: 48%;
 }
 
 #options {
-	background-color: #3498DB;
-	border-bottom: 5px solid #2980B9;
-	text-shadow: 0px -2px #2980B9;
-	width:48%;
-	float:right;
+    background: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    float: right;
+    text-shadow: 0 -2px #2980B9;
+    width: 48%;
 }
 
 img {
-	float: right;
+    float: right;
 }
 
-#receiptHeader, #receiptFooter {
-	display: none;
+#receiptHeader,
+#receiptFooter {
+    display: none;
 }
 
 .coinroll {
-	width: 200px;
-	height:25px;
-	margin:0px;
-	padding:0px;
-	background-image: url(coinroller-back.jpg);
-	background-repeat: no-repeat;
-	background-position: left top;
-	background-size: 100% 100%;
-	display:flex;
+    background-image: url(coinroller-back.jpg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    width: 200px;
 }
 
 .coinroll .progressBar {
-	margin:0px;
-	padding:0px;
-	width:100%;
-	height:100%;
-	background-image: url(coinroller-fill.jpg);
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 0% 100%;
+    background-image: url(coinroller-fill.jpg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 @media print {
-	button, .coinroll {
-		display: none !important;
-	}
-	#receiptHeader, #receiptFooter {
-		display: block !important;
-	}
-	#cashCounter {
-		margin-left: 20px !important;
-	}
+    button,
+    .coinroll {
+        display: none !important;
+    }
+    
+    #receiptHeader,
+    #receiptFooter {
+        display: block !important;
+    }
+    
+    #cashCounter {
+        margin-left: 20px !important;
+    }
 }

@@ -4,128 +4,163 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Cash Counter Receipt</title>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="stylesheet" href="theme.css"/>
-	</head>
-	<body>
-		<div id="receiptHeader">
-			<img src="../icons/icon-96.png" />
-			<h3>Cash Counter Receipt</h3>
-			<p>This cash receipt was generated using the Cash Counter add-on for Firefox.
-				<br/><br/>
-				Date generated: <span id="printDate">____/_____/___________</span>
-				<br/>
-				Time generated: <span id="printTime">____:____</span>
-			</p>
-			<hr/>
-		</div>
-		<table id="cashCounter">
-			<tr>
-				<td class="faceValue">0.01</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="1" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-				<td class="coinroll" name="d00001"><div class="progressBar"></div></td>
-			</tr>
-			<tr>
-				<td class="faceValue">0.05</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="2" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-				<td class="coinroll" name="d00005"><div class="progressBar"></div></td>
-			</tr>
-			<tr>
-				<td class="faceValue">0.10</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="3" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-				<td class="coinroll" name="d00010"><div class="progressBar"></div></td>
-			</tr>
-			<tr>
-				<td class="faceValue">0.25</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="4" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-				<td class="coinroll" name="d00025"><div class="progressBar"></div></td>
-			</tr>
-			<tr>
-				<td class="faceValue">1.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="5" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-				<td class="coinroll optcoin" name="d00100"><div class="progressBar"></div></td>
-			</tr>
-			<tr>
-				<td class="faceValue">2.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="6" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-				<td class="coinroll optcoin" name="d00200"><div class="progressBar"></div></td>
-			</tr>
-			<tr>
-				<td class="faceValue">5.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="7" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-			</tr>
-			<tr>
-				<td class="faceValue">10.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="8" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-			</tr>
-			<tr>
-				<td class="faceValue">20.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="9" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-			</tr>
-			<tr>
-				<td class="faceValue">50.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="10" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-			</tr>
-			<tr>
-				<td class="faceValue">100.00</td>
-				<td>&times;</td>
-				<td><input type="number" min="0" value="0" tabindex="11" /></td>
-				<td>=</td>
-				<td class="subTotal">0.00</td>
-			</tr>
-			<tr id="total">
-				<td colspan="4">Total</td>
-				<td id="grandTotal">0.00</td>
-			</tr>
-			<tr>
-				<td colspan="6">
-					<button id="clear" tabindex="-1">Reset</button>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="6">
-					<button id="print" tabindex="-1">Print</button>
-					<button id="options" tabindex="-1">Options</button>
-				</td>
-			</tr>
-		</table>
-		<div id="receiptFooter">
-			<hr/>
-			<p>I ________________________________________________ hereby agree that the above cash listing is correct.</p>
-		</div>
-		<script src="script.js"></script>
-	</body>
+    <head>
+        <title>Cash Counter Receipt</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    <body>
+        <div id="receiptHeader">
+            <img src="../icons/icon-96.png">
+            <h3>Cash Counter Receipt</h3>
+            <p>
+                This cash receipt was generated using the Cash Counter add-on for Firefox.
+                <br><br>
+                Date generated: <span id="printDate">____/_____/___________</span>
+                <br>
+                Time generated: <span id="printTime">____:____</span>
+            </p>
+            <hr>
+        </div>
+        <table id="cashCounter">
+            <tr>
+                <td class="faceValue">0.01</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="1">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+                <td class="coinroll" name="d00001">
+                    <div class="progressBar"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="faceValue">0.05</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="2">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+                <td class="coinroll" name="d00005">
+                    <div class="progressBar"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="faceValue">0.10</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="3">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+                <td class="coinroll" name="d00010">
+                    <div class="progressBar"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="faceValue">0.25</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="4">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+                <td class="coinroll" name="d00025">
+                    <div class="progressBar"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="faceValue">1.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="5">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+                <td class="coinroll optcoin" name="d00100">
+                    <div class="progressBar"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="faceValue">2.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="6">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+                <td class="coinroll optcoin" name="d00200">
+                    <div class="progressBar"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="faceValue">5.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="7">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+            </tr>
+            <tr>
+                <td class="faceValue">10.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="8">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+            </tr>
+            <tr>
+                <td class="faceValue">20.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="9">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+            </tr>
+            <tr>
+                <td class="faceValue">50.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="10">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+            </tr>
+            <tr>
+                <td class="faceValue">100.00</td>
+                <td>&times;</td>
+                <td>
+                    <input type="number" min="0" value="0" tabindex="11">
+                </td>
+                <td>=</td>
+                <td class="subTotal">0.00</td>
+            </tr>
+                <tr id="total">
+                <td colspan="4">Total</td>
+                <td id="grandTotal">0.00</td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <button id="clear" tabindex="-1">Reset</button>
+                </td>
+            </tr>
+            <tr>
+            <td colspan="6">
+            <button id="print" tabindex="-1">Print</button>
+            <button id="options" tabindex="-1">Options</button>
+            </td>
+            </tr>
+        </table>
+        <div id="receiptFooter">
+            <hr>
+            <p>I ________________________________________________ hereby agree that the above cash listing is correct.</p>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>

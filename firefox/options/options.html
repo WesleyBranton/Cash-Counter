@@ -4,45 +4,45 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="theme.css"/>
-	</head>
-	<body>
-		<form>
-			<fieldset>
-				<legend>Cash Counter Options</legend>
-				<input type="checkbox" id="showroll" name="showroll"/>
-				<label for="showroll">Show coin roll counter</label>
-				<br/>
-			</fieldset>
-			<br/>
-			<fieldset id="rollset">
-				<legend>Settings</legend>
-				<input type="checkbox" id="show12coin" name="show12coin"/>
-				<label for="show12coin">$1 and $2 coins, not banknotes</label>
-				<br/>
-				<label>Coins in a $0.01 roll: </label>
-				<input type="number" min="1" id="d00001" class="rollvalues"/>
-				<br/>
-				<label>Coins in a $0.05 roll: </label>
-				<input type="number" min="1" id="d00005" class="rollvalues"/>
-				<br/>
-				<label>Coins in a $0.10 roll: </label>
-				<input type="number" min="1" id="d00010" class="rollvalues"/>
-				<br/>
-				<label>Coins in a $0.25 roll: </label>
-				<input type="number" min="1" id="d00025" class="rollvalues"/>
-				<br/>
-				<div id="coin12options">
-					<label>Coins in a $1.00 roll: </label>
-					<input type="number" min="1" id="d00100" class="rollvalues"/>
-					<br/>
-					<label>Coins in a $2.00 roll: </label>
-					<input type="number" min="1" id="d00200" class="rollvalues"/>
-				</div>
-			</fieldset>
-		</form>
-		<script src="options.js"></script>
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Cash Counter Options</legend>
+                <input type="checkbox" id="showroll" name="showroll">
+                <label for="showroll">Show coin roll counter</label>
+                <br>
+            </fieldset>
+            <br>
+            <fieldset id="rollset">
+                <legend>Settings</legend>
+                <input type="checkbox" id="show12coin" name="show12coin">
+                <label for="show12coin">$1 and $2 coins, not banknotes</label>
+                <br>
+                <label>Coins in a $0.01 roll: </label>
+                <input type="number" min="1" id="d00001" class="rollvalues">
+                <br>
+                <label>Coins in a $0.05 roll: </label>
+                <input type="number" min="1" id="d00005" class="rollvalues">
+                <br>
+                <label>Coins in a $0.10 roll: </label>
+                <input type="number" min="1" id="d00010" class="rollvalues">
+                <br>
+                <label>Coins in a $0.25 roll: </label>
+                <input type="number" min="1" id="d00025" class="rollvalues">
+                <br>
+                <div id="coin12options">
+                    <label>Coins in a $1.00 roll: </label>
+                    <input type="number" min="1" id="d00100" class="rollvalues">
+                    <br>
+                    <label>Coins in a $2.00 roll: </label>
+                    <input type="number" min="1" id="d00200" class="rollvalues">
+                </div>
+            </fieldset>
+        </form>
+        <script src="options.js"></script>
+    </body>
 </html>
