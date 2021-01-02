@@ -17,10 +17,6 @@
         "default_popup": "popup/main.html"
     },
 
-    "background": {
-        "scripts": ["background.js"]
-    },
-
     "options_ui": {
         "page": "options/options.html",
         "browser_style": false

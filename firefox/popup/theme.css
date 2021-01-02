@@ -17,17 +17,17 @@ table tr td {
     text-align: left;
 }
 
-.subTotal {
+.subtotal {
     text-align: right;
 }
 
-.subTotal:before,
-#grandTotal:before,
-.faceValue:before {
+.subtotal:before,
+#grand-total:before,
+.value:before {
     content: '$';
 }
 
-#grandTotal {
+#grand-total {
     border-top: 1px solid black;
     font-weight: bold;
 }
@@ -92,7 +92,7 @@ img {
     display: none;
 }
 
-.coinroll {
+.roll {
     background-image: url(coinroller-back.jpg);
     background-position: left top;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ img {
     width: 200px;
 }
 
-.coinroll .progressBar {
+.roll .progress {
     background-image: url(coinroller-fill.jpg);
     background-position: left center;
     background-repeat: no-repeat;
@@ -115,9 +115,15 @@ img {
     width: 100%;
 }
 
+.hide-rolls .roll,
+.hide-12-rolls #d00100 .roll,
+.hide-12-rolls #d00200 .roll {
+    display: none !important;
+}
+
 @media print {
     button,
-    .coinroll {
+    .roll {
         display: none !important;
     }
     

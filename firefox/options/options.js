@@ -22,14 +22,18 @@ function save() {
 }
 
 function restore(data) {
+    data = loadDefaults(data);
+
+    // Load settings
     document.settings.displayroll.value = (data.setting.displayroll) ? 'yes' : 'no';
     document.settings.show12coin.value = (data.setting.show12coin) ? 'yes' : 'no';
 
+    // Load coin roll settings
     document.settings.d00001.value = data.roll.d00001 / 0.01;
     document.settings.d00005.value = data.roll.d00005 / 0.05;
     document.settings.d00010.value = data.roll.d00010 / 0.10;
     document.settings.d00025.value = data.roll.d00025 / 0.25;
-    document.settings.d00100.value = data.roll.d00100 / 1;
+    document.settings.d00100.value = data.roll.d00100;
     document.settings.d00200.value = data.roll.d00200 / 2;
 
     updateUI();
