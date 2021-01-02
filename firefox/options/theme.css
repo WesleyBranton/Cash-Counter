@@ -2,31 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https: //mozilla.org/MPL/2.0/. */
 
+span.currency::before {
+    content: var(--currency-symbol);
+}
+
 * {
     font-family: sans-serif;
 }
 
-fieldset {
-    border: 2px solid #82BF56;
-    border-radius: 5px;
-}
-
-legend {
-    background: #82BF56;
-    border: none;
-    border-bottom: 5px solid #669644;
-    border-radius: 10px;
-    box-sizing: border-box;
-    color: white;
-    font-size: 14pt;
-    padding: 5px 10px;
-    margin: 0 0 5px 0;
-    text-decoration: none;
-    text-shadow: 0 -2px #669644;
-    transition: ease all .1s;
-}
-
-.rollvalues {
-    text-align: center;
-    width: 50px;
+form:not(.show12coin_enabled) .show12coin_only,
+form:not(.displayroll_enabled) .displayroll_only {
+    display: none !important;
 }

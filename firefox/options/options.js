@@ -2,84 +2,63 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-function saveOptions() {
-    // Declared variables
-    var showroll = document.getElementById('showroll');
-    var show12coin = document.getElementById('show12coin');
-    var optd00001 = document.getElementById('d00001');
-    var optd00005 = document.getElementById('d00005');
-    var optd00010 = document.getElementById('d00010');
-    var optd00025 = document.getElementById('d00025');
-    var optd00100 = document.getElementById('d00100');
-    var optd00200 = document.getElementById('d00200');
-    var rollvalues = document.getElementsByClassName('rollvalues');
-
-    // Checks valid input
-    for (i = 0; i < rollvalues.length; i++) {
-        if(isNaN(parseInt(rollvalues[i].value)) ||rollvalues[i].value < -1) {
-            rollvalues[i].value = 1;
-        }
-    }
-    
-    // Saves settings to local storage
+function save() {
     browser.storage.local.set({
         setting: {
-            displayroll: showroll.checked,
-            set12coin: show12coin.checked
-        }
-        });
-    browser.storage.local.set({
+            currency: document.settings.symbol.value.trim(),
+            displayroll: document.settings.displayroll.value == 'yes',
+            show12coin: document.settings.show12coin.value == 'yes'
+        },
         roll: {
-            d00001: parseInt(optd00001.value) * 0.01,
-            d00005: parseInt(optd00005.value) * 0.05,
-            d00010: parseInt(optd00010.value) * 0.1,
-            d00025: parseInt(optd00025.value) * 0.25,
-            d00100: parseInt(optd00100.value) * 1,
-            d00200: parseInt(optd00200.value) * 2
+            d00001: parseInt(document.settings.d00001.value) * 0.01,
+            d00005: parseInt(document.settings.d00005.value) * 0.05,
+            d00010: parseInt(document.settings.d00010.value) * 0.10,
+            d00025: parseInt(document.settings.d00025.value) * 0.25,
+            d00100: parseInt(document.settings.d00100.value) * 1,
+            d00200: parseInt(document.settings.d00200.value) * 2
         }
     });
-    
-    setActive();
+
+    updateUI();
 }
 
-function restoreOptions() {
-    // Loads & outputs saved settings
-    browser.storage.local.get('setting', (res) => {
-        var showroll = document.getElementById('showroll');
-        var show12coin = document.getElementById('show12coin');
-        showroll.checked = res.setting.displayroll;
-        show12coin.checked = res.setting.set12coin;
-    });
-    browser.storage.local.get('roll', (res) => {
-        var optd00001 = document.getElementById('d00001');
-        var optd00005 = document.getElementById('d00005');
-        var optd00010 = document.getElementById('d00010');
-        var optd00025 = document.getElementById('d00025');
-        var optd00100 = document.getElementById('d00100');
-        var optd00200 = document.getElementById('d00200');
-        optd00001.value = res.roll.d00001 / 0.01;
-        optd00005.value = res.roll.d00005 / 0.05;
-        optd00010.value = res.roll.d00010 / 0.1;
-        optd00025.value = res.roll.d00025 / 0.25;
-        optd00100.value = res.roll.d00100;
-        optd00200.value = res.roll.d00200 / 2;
-        setActive();
-    });
+function restore(data) {
+    data = loadDefaults(data);
+
+    // Load settings
+    document.settings.symbol.value = data.setting.currency;
+    document.settings.displayroll.value = (data.setting.displayroll) ? 'yes' : 'no';
+    document.settings.show12coin.value = (data.setting.show12coin) ? 'yes' : 'no';
+
+    // Load coin roll settings
+    document.settings.d00001.value = data.roll.d00001 / 0.01;
+    document.settings.d00005.value = data.roll.d00005 / 0.05;
+    document.settings.d00010.value = data.roll.d00010 / 0.10;
+    document.settings.d00025.value = data.roll.d00025 / 0.25;
+    document.settings.d00100.value = data.roll.d00100;
+    document.settings.d00200.value = data.roll.d00200 / 2;
+
+    updateUI();
 }
 
-function setActive() {
-    if (document.getElementById('showroll').checked) {
-        document.getElementById('rollset').style.display = 'block';
+function updateUI() {
+    // Hide coin roll counters
+    if (document.settings.displayroll.value == 'yes') {
+        document.settings.classList.add('displayroll_enabled');
     } else {
-        document.getElementById('rollset').style.display = 'none';
+        document.settings.classList.remove('displayroll_enabled');
     }
-    
-    if (document.getElementById('show12coin').checked) {
-        document.getElementById('coin12options').style.display = 'block';
+
+    // Show $1 and $2 coin roll counters
+    if (document.settings.show12coin.value == 'yes') {
+        document.settings.classList.add('show12coin_enabled');
     } else {
-        document.getElementById('coin12options').style.display = 'none';
+        document.settings.classList.remove('show12coin_enabled');
     }
+
+    // Update currency symbol
+    document.documentElement.style.setProperty('--currency-symbol', '"' + document.settings.symbol.value.trim() + '"');
 }
 
-restoreOptions();
-document.querySelector('form').addEventListener('change', saveOptions);
+browser.storage.local.get().then(restore);
+document.settings.addEventListener('change', save);
