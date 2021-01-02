@@ -5,6 +5,7 @@
 function save() {
     browser.storage.local.set({
         setting: {
+            currency: document.settings.symbol.value.trim(),
             displayroll: document.settings.displayroll.value == 'yes',
             show12coin: document.settings.show12coin.value == 'yes'
         },
@@ -25,6 +26,7 @@ function restore(data) {
     data = loadDefaults(data);
 
     // Load settings
+    document.settings.symbol.value = data.setting.currency;
     document.settings.displayroll.value = (data.setting.displayroll) ? 'yes' : 'no';
     document.settings.show12coin.value = (data.setting.show12coin) ? 'yes' : 'no';
 
@@ -53,6 +55,9 @@ function updateUI() {
     } else {
         document.settings.classList.remove('show12coin_enabled');
     }
+
+    // Update currency symbol
+    document.documentElement.style.setProperty('--currency-symbol', '"' + document.settings.symbol.value.trim() + '"');
 }
 
 browser.storage.local.get().then(restore);

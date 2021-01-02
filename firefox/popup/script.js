@@ -88,6 +88,9 @@ function load(data) {
     } else {
         UI.table.classList.remove('hide-12-rolls');
     }
+
+    // Update currency symbol
+    document.documentElement.style.setProperty('--currency-symbol', '"' + storage.setting.currency + '"');
 }
 
 /**

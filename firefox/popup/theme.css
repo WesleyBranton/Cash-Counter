@@ -24,7 +24,7 @@ table tr td {
 .subtotal:before,
 #grand-total:before,
 .value:before {
-    content: '$';
+    content: var(--currency-symbol);
 }
 
 #grand-total {

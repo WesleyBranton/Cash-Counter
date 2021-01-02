@@ -1,6 +1,7 @@
 // The default storage API values
 const defaults = {
     setting: {
+        currency: '$',
         displayroll: true,
         show12coin: false
     },

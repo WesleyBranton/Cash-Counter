@@ -13,6 +13,11 @@
     <body class="browser-style">
         <form name="settings">
             <div class="panel-section">
+                <label for="symbol">Currency symbol</label>
+                <input type="text" name="symbol">
+            </div>
+            <div class="panel-section-separator"></div>
+            <div class="panel-section">
                 <label for="displayroll">Show coin roll counter</label>
                 <div>
                     <label><input type="radio" name="displayroll" value="yes"> Yes</label>
@@ -21,7 +26,7 @@
             </div>
             <div class="panel-section-separator"></div>
             <div class="panel-section">
-                <label for="show12coin">$1 and $2 currency type</label>
+                <label for="show12coin"><span class="currency">1</span> and <span class="currency">2</span> currency type</label>
                 <div>
                     <label><input type="radio" name="show12coin" value="yes"> Coin</label>
                     <label><input type="radio" name="show12coin" value="no"> Banknote</label>
@@ -29,32 +34,32 @@
             </div>
             <div class="panel-section-separator displayroll_only"></div>
             <div class="panel-section displayroll_only">
-                <label for="d00001">Coins in a $0.01 roll</label>
+                <label for="d00001">Coins in a <span class="currency">0.01</span> roll</label>
                 <input type="number" min="1" name="d00001" class="rollvalues">
             </div>
             <div class="panel-section-separator displayroll_only"></div>
             <div class="panel-section displayroll_only">
-                <label for="d00005">Coins in a $0.05 roll</label>
+                <label for="d00005">Coins in a <span class="currency">0.05</span> roll</label>
                 <input type="number" min="1" name="d00005" class="rollvalues">
             </div>
             <div class="panel-section-separator displayroll_only"></div>
             <div class="panel-section displayroll_only">
-                <label for="d00010">Coins in a $0.10 roll</label>
+                <label for="d00010">Coins in a <span class="currency">0.10</span> roll</label>
                 <input type="number" min="1" name="d00010" class="rollvalues">
             </div>
             <div class="panel-section-separator displayroll_only"></div>
             <div class="panel-section displayroll_only">
-                <label for="d00025">Coins in a $0.25 roll</label>
+                <label for="d00025">Coins in a <span class="currency">0.25</span> roll</label>
                 <input type="number" min="1" name="d00025" class="rollvalues">
             </div>
             <div class="panel-section-separator displayroll_only show12coin_only"></div>
             <div class="panel-section displayroll_only show12coin_only">
-                <label for="d00100">Coins in a $1.00 roll</label>
+                <label for="d00100">Coins in a <span class="currency">1.00</span> roll</label>
                 <input type="number" min="1" name="d00100" class="rollvalues">
             </div>
             <div class="panel-section-separator displayroll_only show12coin_only"></div>
             <div class="panel-section displayroll_only show12coin_only">
-                <label for="d00200">Coins in a $2.00 roll</label>
+                <label for="d00200">Coins in a <span class="currency">2.00</span> roll</label>
                 <input type="number" min="1" name="d00200" class="rollvalues">
             </div>
         </form>
