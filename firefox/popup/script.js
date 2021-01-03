@@ -130,7 +130,7 @@ function update() {
         // Update coin roll progress (if necessary)
         if (data.roll != null) {
             const percent = data.subtotal.value / storage.roll[row.id] * 100;
-            data.roll.progress.style.backgroundSize = percent + '% 100%';
+            data.roll.progress.style.width = percent + '%';
         }
     }
 
