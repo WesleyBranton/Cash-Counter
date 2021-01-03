@@ -3,8 +3,9 @@
  * file, You can obtain one at https: //mozilla.org/MPL/2.0/. */
 
 * {
+    --font-size: 17px;
     cursor: default;
-    font: normal 17px sans-serif;
+    font: normal var(--font-size) sans-serif;
     user-select: none;
 }
 
@@ -39,48 +40,77 @@ input {
     width: 75px;
 }
 
-button {
-    border: none;
-    border-radius: 10px;
-    border-top: 0px solid white;
-    box-sizing: border-box;
-    color: white;
+.button-row {
+    display: flex;
+}
+
+button,
+button * {
     cursor: pointer;
-    float: left;
-    font-size: 20px;
-    margin: 0 0 5px 0;
-    padding: 10px 0;
-    text-decoration: none;
-    transition: ease all .1s;
+}
+
+button {
+    display: flex;
+    padding: 0;
+    border: none;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    margin: .2em;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+button:hover {
+    filter: brightness(90%);
 }
 
 button:active {
-    transform: translate(0, 5px);
-    border-bottom: 0 solid !important;
-    border-top: 5px solid white !important;
+    filter: brightness(70%);
 }
 
-#clear {
+button > div.icon {
+    display: flex;
+    height: 100%;
+}
+
+button > div.icon > img {
+    padding: 0 1em;
+    width: calc(var(--font-size) * 1.5);
+}
+
+button > div.text {
+    flex: 1;
+    font-size: 150%;
+    font-weight: bold;
+    padding: .5em 0;
+}
+
+#clear > div.icon {
+    background: #BD3E31;
+}
+
+#clear > div.text {
     background: #E74C3C;
-    border-bottom: 5px solid #BD3E31;
-    text-shadow: 0 -2px #BD3E31;
-    width: 100%;
+    color: white;
 }
 
-#print {
+#print > div.icon {
+    background: #669644;
+}
+
+#print > div.text {
     background: #82BF56;
-    border-bottom: 5px solid #669644;
-    float: left;
-    text-shadow: 0 -2px #669644;
-    width: 48%;
+    color: white;
 }
 
-#options {
+#options > div.icon {
+    background: #2980B9;
+}
+
+#options > div.text {
     background: #3498DB;
-    border-bottom: 5px solid #2980B9;
-    float: right;
-    text-shadow: 0 -2px #2980B9;
-    width: 48%;
+    color: white;
 }
 
 img {
@@ -93,26 +123,23 @@ img {
 }
 
 .roll {
-    background-image: url(coinroller-back.jpg);
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    display: flex;
     height: 25px;
     margin: 0;
-    padding: 0;
+    padding: 3px;
     width: 200px;
+    border-radius: 1000px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .roll .progress {
-    background-image: url(coinroller-fill.jpg);
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: 0 100%;
+    background: #82BF56;
     height: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 25%;
+    border-radius: 1000px;
 }
 
 .hide-rolls .roll,
