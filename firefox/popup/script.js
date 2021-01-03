@@ -20,7 +20,7 @@ browser.storage.local.get().then(load);
 
 UI.table.addEventListener('change', update);
 UI.buttons.clear.addEventListener('click', clear);
-UI.buttons.print.addEventListener('click', print);
+UI.buttons.print.addEventListener('click', printPage);
 UI.buttons.options.addEventListener('click', openOptions);
 
 /**
@@ -150,7 +150,7 @@ function clear() {
 /**
  * Print page
  */
-function print() {
+function printPage() {
     // Collects date & time data
     var d = new Date();
     var year = d.getFullYear();
