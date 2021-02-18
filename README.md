@@ -19,10 +19,4 @@ To develop and test the extension, you need to open the "about:debugging" page i
 Further documentation about developing Firefox extensions can be found [here](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension).
 
 ## Release Notes
-### Version 2.0
-* **[NEW]** User interface and graphics update
-* **[NEW]** Branding update
-* **[FIXED]** Not applicable settings hidden in options UI
-
-### Version 1.0.1
-* **[FIXED]** Users can no longer enter decimal count numbers
+Release notes can be found on [this GitHub repository](https://github.com/WesleyBranton/Cash-Counter/releases) or [the Firefox add-ons listing](https://addons.mozilla.org/firefox/addon/cash-counter/versions/).
